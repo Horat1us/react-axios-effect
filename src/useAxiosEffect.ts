@@ -1,5 +1,5 @@
 import * as React from "react";
-import axios, { AxiosRequestConfig, CancelTokenSource, AxiosPromise } from "axios";
+import axios, { AxiosRequestConfig, CancelTokenSource } from "axios";
 
 const handleRejected = (error: any): Promise<void | never> => {
     if (axios.isCancel(error)) {
@@ -8,10 +8,10 @@ const handleRejected = (error: any): Promise<void | never> => {
     return Promise.reject(error);
 };
 
-export function useAxiosEffect<T = any>(
+export function useAxiosEffect(
     effect: (
         cancelToken: AxiosRequestConfig["cancelToken"]
-    ) => AxiosPromise<T>,
+    ) => Promise<any>,
     deps: any[]
 ): void {
     React.useEffect(() => {
