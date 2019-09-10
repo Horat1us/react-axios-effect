@@ -1,6 +1,6 @@
 {
   "name": "react-axios-effect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Effect Hook based on document.readyState",
   "main": "dist/react-axios-effect.cjs.js",
   "module": "dist/react-axios-effect.esm.js",
